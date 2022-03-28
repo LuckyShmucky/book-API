@@ -1,12 +1,15 @@
-require('dotenv').config()
+
 const mongoose = require('mongoose')
 const { Schema } = mongoose
 
-const boookSchema = new Schema({
+const bookSchema = new Schema({
 title: {type: String, require: true},
 image: {type: String},
 description: {type: String, required: true},
-year: {type: number},
-quantity: {type: number}
+year: {type: Number},
+quantity: {type: Number}
 
 })
+
+const Book = mongoose.model('Book', bookSchema)
+module.exports = Book
